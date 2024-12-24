@@ -1,6 +1,6 @@
 function setup() {
-  createCanvas(400, 400);
-  background("aqua");
+  createCanvas(windowWidth, windowHeight);
+  background("#93cff9");
 }
 
 const origin = 200;
@@ -20,7 +20,7 @@ const percentAway = (distance) => {
 
 function draw() {
   // Head
-  fill(220, 220, 200);
+  fill("#f9d977");
   circle(200, 200, 200);
 
   if (mouseIsPressed) {
