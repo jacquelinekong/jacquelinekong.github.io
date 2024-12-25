@@ -30,6 +30,10 @@ function setup() {
   middleY = windowHeight / 2;
   createCanvas(windowWidth, windowHeight);
   background("#93cff9");
+
+  textSize(32);
+  textAlign(CENTER);
+  text("scream at the top of your lungs!", windowWidth / 2, windowHeight / 4);
 }
 
 function draw() {
@@ -80,4 +84,5 @@ function windowResized() {
   middleY = windowHeight / 2;
   resizeCanvas(windowWidth, windowHeight);
   background("#93cff9");
+  text("scream at the top of your lungs!", windowWidth / 2, windowHeight / 4);
 }
