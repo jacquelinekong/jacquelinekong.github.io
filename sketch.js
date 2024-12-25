@@ -2,7 +2,7 @@ let middleX;
 let middleY;
 const mouseXFromMiddle = () => {
   const distance = mouseX - middleX;
-  return distance <= middleY ? distance : middleY;
+  return distance <= middleX ? distance : middleX;
 };
 
 const mouseYFromMiddle = () => {
@@ -61,15 +61,16 @@ function draw() {
   }
 
   // Pupils
+  // TODO prevent pupil overflow
   fill("black");
   circle(
-    leftEyeX + mouseXFromMiddle() / 20,
-    leftEyeY + mouseYFromMiddle() / 20,
+    leftEyeX + mouseXFromMiddle() / 40,
+    leftEyeY + mouseYFromMiddle() / 30,
     15
   );
   circle(
-    rightEyeX + mouseXFromMiddle() / 25,
-    rightEyeY + mouseYFromMiddle() / 25,
+    rightEyeX + mouseXFromMiddle() / 50,
+    rightEyeY + mouseYFromMiddle() / 35,
     15
   );
 }
