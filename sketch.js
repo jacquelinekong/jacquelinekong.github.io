@@ -10,6 +10,21 @@ const mouseYFromMiddle = () => {
   return distance <= middleY ? distance : middleY;
 };
 
+let mySound;
+function preload() {
+  soundFormats("mp3", "ogg");
+  console.log("loading sound");
+  mySound = loadSound("/assets/scream-long.mp3");
+}
+
+function mousePressed() {
+  mySound.play();
+}
+
+function mouseReleased() {
+  mySound.stop();
+}
+
 function setup() {
   middleX = windowWidth / 2;
   middleY = windowHeight / 2;
@@ -32,6 +47,7 @@ function draw() {
     fill(255, 255, 255);
     circle(leftEyeX, leftEyeY, 60);
     circle(rightEyeX, rightEyeY, 60);
+    // Mouth
     fill("black");
     ellipse(middleX, middleY + 50, 70, 70);
   } else {
@@ -62,4 +78,5 @@ function windowResized() {
   middleX = windowWidth / 2;
   middleY = windowHeight / 2;
   resizeCanvas(windowWidth, windowHeight);
+  background("#93cff9");
 }
